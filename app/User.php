@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //funkcja wyciągająca wszystkie posty uzytkownika na dashboard
+    public function posts() {
+        //relacja (one to many)tabel user i post
+        return $this->hasMany('App\Post');
+    }
 }

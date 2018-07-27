@@ -15,11 +15,19 @@
       
       <div class="card text-secondary bg-light mb-3" >
         <div class="card-header">
-        <h3><a href="/posts/{{$i->id}}"> {{$i->title}}</a></h3>
-          <small>Written on {{$i->created_at}} </small>
+          
+          <h3><a href="/posts/{{$i->id}}"> {{$i->title}}</a></h3>
+          <small>Written on {{$i->created_at}} by {{$i->user->name}}</small>
         </div>
         <div class="card-body">
-          <p class="card-text">{!!$i->body!!}</p>
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <img style="width:100%" src="/storage/cover_images/{{$i->cover_image}}">            
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <p class="card-text">{!!$i->body!!}</p>
+            </div>
+          </div>
         </div>
       </div>
 
